@@ -20,9 +20,9 @@ var getIndexBelowMaxForKey = function(str, max) {
   return hash % max;
 };
 
-const HashTable = function() {
+const HashTable = function(storageLimit) {
   this.storage = [];
-  this.storageLimit = 4;
+  this.storageLimit = storageLimit;
   this.itemsStored = 0;
 
   // create empty buckets
