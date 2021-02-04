@@ -33,8 +33,10 @@ Trie.prototype.insert = function(word) {
   for (let i = 0; i < word.length; i++) {
     let char = word[i];
     let newNode = new Node(char);
-    currentNode.children[char] = newNode;
-    currentNode = newNode;
+    if (!currentNode.children[char]) {
+       currentNode.children[char] = newNode;
+    }
+    currentNode = currentNode.children[char] || newNode;
   }
   currentNode.isEndOfWord = true;
 };
