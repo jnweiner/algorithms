@@ -14,3 +14,31 @@ Input: String="abccde"
 Output: 3
 Explanation: Longest substrings without any repeating characters are "abc" & "cde".
 */
+
+const longestNoRepeatSubstr = (string) => {
+
+  let start = 0;
+  let longestLength = 0;
+  const foundChars = {};
+
+  for (let end = 0; end < string.length; end++) {
+    let char = string[end];
+    if (!foundChars[char]) {
+      foundChars[char] = true;
+    } else {
+      if ((end - start) > longestLength) {
+        longestLength = (end - start);
+      }
+
+      while (foundChars[char]) {
+        delete foundChars[string[start]];
+        start++;
+      }
+
+      foundChars[char] = true;
+    }
+  }
+
+  return longestLength;
+
+};
