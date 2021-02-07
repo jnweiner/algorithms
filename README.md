@@ -1,5 +1,5 @@
-# Practice makes perfect
-Homebase for my practice with algorithms and data structures
+# All the algorithms 
+Homebase for my practice with algorithms and data structures.
 
 Exercises pulled from:
 * [Leetcode](https://leetcode.com/)
